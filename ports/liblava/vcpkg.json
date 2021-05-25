@@ -1,0 +1,20 @@
+{
+  "name": "liblava",
+  "version": "0.6.2",
+  "port-version": 0,
+  "description": [
+    "A modern and easy-to-use library for the Vulkan API",
+    "lava is a lean framework that provides essentials for low-level graphics and is specially well suited for prototyping, tooling and education."
+  ],
+  "homepage": "https://github.com/liblava/liblava",
+  "license": "MIT",
+  "maintainers": "Lava Block OÜ (lib@lava-block.com)",
+  "features": {
+    "test": {
+      "description": "Install test binaries"
+    },
+    "demo": {
+      "description": "Install demo binaries"
+    }
+  }
+}
