@@ -1,7 +1,7 @@
 {
   "default": {
     "liblava": {
-      "baseline": "0.6.3",
+      "baseline": "0.7.0",
       "port-version": 0
     }
   }

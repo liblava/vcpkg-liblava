@@ -6,14 +6,14 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         demo  LIBLAVA_DEMO
 )
 
-set(REF 0.6.3)
+set(REF 0.7.0)
 set(HEAD_REF master)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO liblava/liblava
     REF ${REF}
-    SHA512 22df5e88994759ccbda2bd7430e6f097cb68c65fd32b3f60f771b5f54e9888638e682a38815a530fd8c92f4907eb2b739f37f737b5dd92de9f4f710643b3bb73
+    SHA512 d19611f9f412351c7502ed780e8c4c00642111493853adfc268eecfefedec650276ae39cb86b7c6a9f21b4dbdcf75f33d7392e17abf246e66c30d1a9db4b3eef
     HEAD_REF ${HEAD_REF}
 )
 
