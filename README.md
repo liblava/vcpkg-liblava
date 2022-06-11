@@ -71,7 +71,7 @@ In your CMakeLists.txt, find and link to lava:
 
 ```cmake
 find_package(lava CONFIG REQUIRED)
-target_link_libraries(main PRIVATE lava::app)
+target_link_libraries(main PRIVATE lava::engine)
 ```
 
 # Features

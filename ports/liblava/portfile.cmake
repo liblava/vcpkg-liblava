@@ -2,52 +2,20 @@ vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
-        test  LIBLAVA_TESTS
+        test  LIBLAVA_TEST
         demo  LIBLAVA_DEMO
 )
 
-set(REF 0.7.0)
+set(REF 0.7.1)
 set(HEAD_REF master)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO liblava/liblava
     REF ${REF}
-    SHA512 d19611f9f412351c7502ed780e8c4c00642111493853adfc268eecfefedec650276ae39cb86b7c6a9f21b4dbdcf75f33d7392e17abf246e66c30d1a9db4b3eef
+    SHA512 973d9c3738184f4f9a1fd4f964fd2585c8da24485cf1969567e2ccc3e6ed3c39233ebc26abf77d34fa449952a0ae71ec79f31b905ede5e918881d94652cb756b
     HEAD_REF ${HEAD_REF}
 )
-
-# vcpkg_from_github or vcpkg_from_git don't download submodules and get rid of the .git folder
-# restore it and update submodules
-
-if(NOT EXISTS "${SOURCE_PATH}/.git")
-    message(STATUS "Updating submodules")
-
-    if(VCPKG_USE_HEAD_VERSION)
-        set(CLONE_REF ${HEAD_REF})
-    else()
-        set(CLONE_REF ${REF})
-    endif()
-
-    vcpkg_find_acquire_program(GIT)
-
-    set(COMMANDS
-        "${GIT} clone --depth 1 --branch ${CLONE_REF} --bare https://github.com/liblava/liblava.git .git"
-        "${GIT} config core.bare false"
-        "${GIT} reset --hard"
-        "${GIT} submodule update --init --recursive"
-    )
-
-    foreach(COMMAND ${COMMANDS})
-        separate_arguments(COMMAND)
-        vcpkg_execute_required_process(
-            ALLOW_IN_DOWNLOAD_MODE
-            COMMAND ${COMMAND}
-            WORKING_DIRECTORY ${SOURCE_PATH}
-            LOGNAME update-submodules
-        )
-    endforeach()
-endif()
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
@@ -71,7 +39,7 @@ if("test" IN_LIST FEATURES)
     vcpkg_copy_tools(
         TOOL_NAMES
             lava
-            lava-unit
+            lava-test
         AUTO_CLEAN
     )
 endif()
@@ -87,6 +55,8 @@ if("demo" IN_LIST FEATURES)
     vcpkg_copy_tools(
         TOOL_NAMES
             lava-triangle
+            lava-generics
+            lava-shapes
             lava-lamp
             lava-spawn
             lava-light
