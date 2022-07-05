@@ -6,14 +6,14 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         demo  LIBLAVA_DEMO
 )
 
-set(REF 0.7.1)
+set(REF 0.7.2)
 set(HEAD_REF master)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO liblava/liblava
     REF ${REF}
-    SHA512 973d9c3738184f4f9a1fd4f964fd2585c8da24485cf1969567e2ccc3e6ed3c39233ebc26abf77d34fa449952a0ae71ec79f31b905ede5e918881d94652cb756b
+    SHA512 473e29686423c1da08ac5032294dbd9a721cda2abe47cb28e5b34dc75085431518e7cabcf741cc1beeb42eb9075e93e848584215d6a4a49620468825a126959c
     HEAD_REF ${HEAD_REF}
 )
 
@@ -60,6 +60,7 @@ if("demo" IN_LIST FEATURES)
 
     vcpkg_copy_tools(
         TOOL_NAMES
+            lava-demo
             lava-triangle
             lava-generics
             lava-shapes
