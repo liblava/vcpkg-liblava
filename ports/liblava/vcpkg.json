@@ -1,6 +1,6 @@
 {
   "name": "liblava",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "port-version": 0,
   "description": [
     "A modern and easy-to-use library for the Vulkan API",
