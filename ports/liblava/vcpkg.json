@@ -6,9 +6,9 @@
     "A modern and easy-to-use library for the Vulkan API",
     "lava is a lean framework that provides essentials for low-level graphics and is specially well suited for prototyping, tooling, profiling and education."
   ],
-  "homepage": "https://github.com/liblava/liblava",
+  "homepage": "https://liblava.dev",
   "license": "MIT",
-  "maintainers": "Lava Block OÜ (lib@lava-block.com)",
+  "maintainers": "Lava Block OÜ (code@liblava.dev)",
   "features": {
     "test": {
       "description": "Install test binaries"

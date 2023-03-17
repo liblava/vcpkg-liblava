@@ -1,6 +1,8 @@
-# Vcpkg registry and port for [liblava](https://github.com/liblava/liblava).
+# Vcpkg registry and port for [liblava](https://liblava.dev)
 
-liblava is a modern and easy-to-use library for the Vulkan® API
+liblava is a modern C++ and easy-to-use library for the Vulkan® API
+
+<br />
 
 # Install
 
@@ -57,6 +59,8 @@ vcpkg install liblava --overlay-ports=/path/to/vcpkg-liblava/ports/liblava
 
 **Note: Installing lava this way is discouraged. This port builds dependencies as submodules rather than using existing vcpkg ports. These submodule libraries may conflict with existing ports installed globally.**
 
+<br />
+
 # Usage
 
 ## Vcpkg integration
@@ -74,6 +78,8 @@ find_package(lava CONFIG REQUIRED)
 target_link_libraries(main PRIVATE lava::engine)
 ```
 
+<br />
+
 # Features
 
 The following optional features can be configured:
@@ -84,6 +90,8 @@ The following optional features can be configured:
 | demo    | Build and install lava demo binaries |
 
 For information on how to set them, refer to [Selecting library features](https://github.com/microsoft/vcpkg/blob/master/docs/users/selecting-library-features.md).
+
+<br />
 
 # New version
 
@@ -104,3 +112,9 @@ To add a new [tagged lava version](https://github.com/liblava/liblava/tags):
 4. Modify versions/baseline.json
     - update baseline field
 5. Commit changes with --amend
+
+<br />
+
+<br />
+
+<a href="https://liblava.dev"><img src="https://github.com/liblava.png" width="50"></a>
